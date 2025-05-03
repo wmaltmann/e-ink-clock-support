@@ -6,7 +6,7 @@ def image_to_bit_array_1d(path, threshold=0.85):
     image = Image.open(path).convert("RGB")
     
     # Check height only
-    if image.height not in (80,16):
+    if image.height not in (80,16,24):
         raise ValueError(f"Image {path} must have height 80 pixels, got {image.height}")
 
     width, height = image.size
@@ -68,9 +68,23 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
 # folder = "80"
 
 # 16px font
-filename = "16/sans_16.py"
-font_const_name = "SANS_16"
-image_files = ["A.jpg", "M.jpg", "P.jpg", "space.jpg"]
-folder = "16"
+# filename = "16/sans_16.py"
+# font_const_name = "SANS_16"
+# image_files = ["A.jpg", "M.jpg", "P.jpg", "space.jpg"]
+# folder = "16"
+
+# 16px icons
+# filename = "icons_24/icons_24.py"
+# font_const_name = "ICONS_24"
+# image_files = ["battery_0.jpg", "battery_100.jpg", "battery_25.jpg", "battery_50.jpg",
+#                 "battery_75.jpg", "wifi_on.jpg", "wifi_off.jpg", "wifi_config.jpg" ,"alarm_on.jpg",
+#                 "alarm_off.jpg", "alarm_snooze.jpg","volume_on.jpg", "volume_off.jpg", "vibrate.jpg"]
+# folder = "icons_24"
+
+# 80px icons
+filename = "icons_80/icons_80.py"
+font_const_name = "ICONS_80"
+image_files = ["battery_0.jpg"]
+folder = "icons_80"
 
 generate_constants(image_files, filename, folder,font_const_name)
