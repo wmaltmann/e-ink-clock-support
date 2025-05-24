@@ -62,10 +62,10 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
         f.write("}\n")  # Close dict
 
 # 80px font
-# filename = "80/digital_80.py"
-# font_const_name = "DIGITAL_80"
-# image_files = ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "space.jpg", "colon.jpg"]
-# folder = "80"
+filename = "80/digital_80.py"
+font_const_name = "DIGITAL_80"
+image_files = ["!.jpg","0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "space.jpg", "colon.jpg"]
+folder = "80"
 
 # 16px font
 # filename = "16/sans_16.py"
@@ -82,9 +82,9 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
 # folder = "icons_24"
 
 # 80px icons
-filename = "icons_80/icons_80.py"
-font_const_name = "ICONS_80"
-image_files = ["battery_0.jpg"]
-folder = "icons_80"
+# filename = "icons_80/icons_80.py"
+# font_const_name = "ICONS_80"
+# image_files = ["battery_0.jpg"]
+# folder = "icons_80"
 
 generate_constants(image_files, filename, folder,font_const_name)
