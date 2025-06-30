@@ -46,7 +46,7 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
         for path in image_paths:
             # Get a valid Python constant name (remove extension, make uppercase)
             name = os.path.splitext(os.path.basename(folder+"/"+path))[0]
-            const_name = name
+            const_name = name.split('_')[0]
 
             # Process image
             width, bit_array = image_to_bit_array_1d(folder+"/"+path)
@@ -57,6 +57,10 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
                 const_name = " "
             elif name == "colon":
                 const_name = ":"
+            elif name == "._":
+                const_name = "."
+            elif name == "comma":
+                const_name = ","
             f.write(f"    '{const_name}': {{'width': {width}, 'bitmap': '{hex_string}'}},\n")
 
         f.write("}\n")  # Close dict
@@ -97,8 +101,8 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
 filename = "18/franklin_18.py"
 font_const_name = "FRANKLIN_18"
 image_files = ["!.jpg", "@.jpg", "#.jpg", "$.jpg","._.jpg","0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
-               "6.jpg", "7.jpg", "8.jpg", "9.jpg", "space.jpg", "colon.jpg",
-               "A_.jpg", "D_.jpg",  "F_.jpg", "M_.jpg", "N_.jpg", "O_.jpg", "S_.jpg", "T_.jpg","W_.jpg",
+               "6.jpg", "7.jpg", "8.jpg", "9.jpg", "space.jpg", "colon.jpg", "comma.jpg",
+               "A_.jpg", "D_.jpg",  "F_.jpg", "J_.jpg", "M_.jpg", "N_.jpg", "O_.jpg", "P_.jpg", "S_.jpg", "T_.jpg","W_.jpg",
                "a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg",       "g.jpg", "h.jpg", "i.jpg",
                                  "l.jpg", "m.jpg", "n.jpg", "o.jpg", "p.jpg",          "r.jpg",
                "s.jpg", "t.jpg", "u.jpg", "v.jpg",                   "y.jpg"]
