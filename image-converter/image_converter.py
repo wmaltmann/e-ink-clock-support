@@ -46,7 +46,7 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
         for path in image_paths:
             # Get a valid Python constant name (remove extension, make uppercase)
             name = os.path.splitext(os.path.basename(folder+"/"+path))[0]
-            const_name = name.upper()
+            const_name = name
 
             # Process image
             width, bit_array = image_to_bit_array_1d(folder+"/"+path)
