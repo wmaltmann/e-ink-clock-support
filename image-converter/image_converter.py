@@ -6,8 +6,8 @@ def image_to_bit_array_1d(path, threshold=0.85):
     image = Image.open(path).convert("RGB")
     
     # Check height only
-    if image.height not in (80,16,24):
-        raise ValueError(f"Image {path} must have height 80 pixels, got {image.height}")
+    if image.height not in (80,16,24, 18):
+        raise ValueError(f"Image {path} must have approved height in pixels, got {image.height}")
 
     width, height = image.size
     bit_array = []
@@ -74,17 +74,34 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
 # folder = "16"
 
 # 24px icons
-filename = "icons_24/icons_24.py"
-font_const_name = "ICONS_24"
-image_files = ["battery_0.jpg", "battery_100.jpg", "battery_25.jpg", "battery_50.jpg",
-                "battery_75.jpg", "wifi_on.jpg", "wifi_off.jpg", "wifi_config.jpg" ,"alarm_on.jpg",
-                "alarm_off.jpg", "alarm_snooze.jpg","volume_on.jpg", "volume_off.jpg", "vibrate.jpg"]
-folder = "icons_24"
+# filename = "icons_24/icons_24.py"
+# font_const_name = "ICONS_24"
+# image_files = ["battery_0.jpg", "battery_100.jpg", "battery_25.jpg", "battery_50.jpg",
+#                 "battery_75.jpg", "wifi_on.jpg", "wifi_off.jpg", "wifi_config.jpg" ,"alarm_on.jpg",
+#                 "alarm_off.jpg", "alarm_snooze.jpg","volume_on.jpg", "volume_off.jpg", "vibrate.jpg"]
+# folder = "icons_24"
 
 # 80px icons
 # filename = "icons_80/icons_80.py"
 # font_const_name = "ICONS_80"
 # image_files = ["battery_0.jpg"]
 # folder = "icons_80"
+
+# 16px font
+# filename = "16/sans_16.py"
+# font_const_name = "SANS_16"
+# image_files = ["A.jpg", "M.jpg", "P.jpg", "space.jpg"]
+# folder = "16"
+
+# 18px font
+filename = "18/franklin_18.py"
+font_const_name = "FRANKLIN_18"
+image_files = ["!.jpg", "@.jpg", "#.jpg", "$.jpg","._.jpg","0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
+               "6.jpg", "7.jpg", "8.jpg", "9.jpg", "space.jpg", "colon.jpg",
+               "A_.jpg", "D_.jpg",  "F_.jpg", "M_.jpg", "N_.jpg", "O_.jpg", "S_.jpg", "T_.jpg","W_.jpg",
+               "a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg",       "g.jpg", "h.jpg", "i.jpg",
+                                 "l.jpg", "m.jpg", "n.jpg", "o.jpg", "p.jpg",          "r.jpg",
+               "s.jpg", "t.jpg", "u.jpg", "v.jpg",                   "y.jpg"]
+folder = "18"
 
 generate_constants(image_files, filename, folder,font_const_name)
