@@ -46,8 +46,8 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
         for path in image_paths:
             # Get a valid Python constant name (remove extension, make uppercase)
             name = os.path.splitext(os.path.basename(folder+"/"+path))[0]
-            #const_name = name.split('_')[0]
-            const_name = name.upper()
+            const_name = name.split('_')[0]
+            # const_name = name.upper()
 
             # Process image
             width, bit_array = image_to_bit_array_1d(folder+"/"+path)
@@ -79,13 +79,13 @@ def generate_constants(image_paths, output_filename, folder :str, font_const_nam
 # folder = "16"
 
 # 24px icons
-filename = "icons_24/icons_24.py"
-font_const_name = "ICONS_24"
-image_files = ["battery_0.jpg", "battery_100.jpg", "battery_25.jpg", "battery_50.jpg",
-                "battery_75.jpg", "wifi_on.jpg", "wifi_off.jpg", "wifi_config.jpg" ,"alarm_on.jpg",
-                "alarm_off.jpg", "alarm_snooze.jpg","volume_on.jpg", "volume_off.jpg", "vibrate.jpg",
-                "wave.jpg"]
-folder = "icons_24"
+# filename = "icons_24/icons_24.py"
+# font_const_name = "ICONS_24"
+# image_files = ["battery_0.jpg", "battery_100.jpg", "battery_25.jpg", "battery_50.jpg",
+#                 "battery_75.jpg", "wifi_on.jpg", "wifi_off.jpg", "wifi_config.jpg" ,"alarm_on.jpg",
+#                 "alarm_off.jpg", "alarm_snooze.jpg","volume_on.jpg", "volume_off.jpg", "vibrate.jpg",
+#                 "wave.jpg"]
+# folder = "icons_24"
 
 # 80px icons
 # filename = "icons_80/icons_80.py"
@@ -100,14 +100,14 @@ folder = "icons_24"
 # folder = "16"
 
 # 18px font
-# filename = "18/franklin_18.py"
-# font_const_name = "FRANKLIN_18"
-# image_files = ["!.jpg", "@.jpg", "#.jpg", "$.jpg","._.jpg","0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
-#                "6.jpg", "7.jpg", "8.jpg", "9.jpg", "space.jpg", "colon.jpg", "comma.jpg",
-#                "A_.jpg", "D_.jpg",  "F_.jpg", "J_.jpg", "M_.jpg", "N_.jpg", "O_.jpg", "P_.jpg", "S_.jpg", "T_.jpg","W_.jpg",
-#                "a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg",       "g.jpg", "h.jpg", "i.jpg",
-#                                  "l.jpg", "m.jpg", "n.jpg", "o.jpg", "p.jpg",          "r.jpg",
-#                "s.jpg", "t.jpg", "u.jpg", "v.jpg",                   "y.jpg"]
-# folder = "18"
+filename = "18/franklin_18.py"
+font_const_name = "FRANKLIN_18"
+image_files = ["!.jpg", "@.jpg", "#.jpg", "$.jpg","._.jpg","0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
+               "6.jpg", "7.jpg", "8.jpg", "9.jpg", "space.jpg", "colon.jpg", "comma.jpg",
+               "A_.jpg", "D_.jpg",  "F_.jpg", "J_.jpg", "M_.jpg", "N_.jpg", "O_.jpg", "P_.jpg", "S_.jpg", "T_.jpg","W_.jpg",
+               "a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg",       "g.jpg", "h.jpg", "i.jpg",
+                                 "l.jpg", "m.jpg", "n.jpg", "o.jpg", "p.jpg",          "r.jpg",
+               "s.jpg", "t.jpg", "u.jpg", "v.jpg",                   "y.jpg"]
+folder = "18"
 
 generate_constants(image_files, filename, folder,font_const_name)

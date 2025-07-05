@@ -38,8 +38,8 @@ def save_preprocessed_font(processed_font, output_path, output_var="FONT_PRE"):
         f.write("\n")
 
 def main():
-    # input_font_py = "18/franklin_18.py"
-    input_font_py = "80/DIGITAL_80.py"  
+    input_font_py = "18/franklin_18.py"
+    # input_font_py = "80/DIGITAL_80.py"  
     temp = input_font_py.split("/")[1]
     font_var_name = temp.split(".")[0].upper()
     output_py = temp.split(".")[0] + "_pre.py"
